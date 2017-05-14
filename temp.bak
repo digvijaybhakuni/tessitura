@@ -1,0 +1,32 @@
+<Table
+    height={"auto"}
+    fixedHeader={true}
+    fixedFooter={false}
+    selectable={true}
+    multiSelectable={true} >
+        <TableHeader
+        displaySelectAll={this.state.showCheckboxes}
+        adjustForCheckbox={this.state.showCheckboxes}
+        enableSelectAll={this.state.enableSelectAll}>
+        <TableRow>
+            <TableHeaderColumn tooltip="Social Click">Social Click</TableHeaderColumn>
+            <TableHeaderColumn tooltip="Allowable Decrease">Allowable Decrease</TableHeaderColumn>
+            <TableHeaderColumn tooltip="Allowable Increase">Allowable Increase</TableHeaderColumn>
+            <TableHeaderColumn tooltip="Optimal Percentage Change">Optimal Percentage Change</TableHeaderColumn>
+        </TableRow>
+    </TableHeader>
+    <TableBody
+        displayRowCheckbox={true}
+        deselectOnClickaway={false}
+        showRowHover={true}
+        stripedRows={false}>
+        { socialClickData.map((r, i) => (
+            <TableRow key={i}>
+                <TableRowColumn>{r.name}</TableRowColumn>
+                <TableRowColumn><input type="text" value={r.desc} onChange={this.cellChange.bind(this, "desc", i, socialClickData)}/></TableRowColumn>
+                <TableRowColumn>{r.inc}</TableRowColumn>
+                <TableRowColumn>{r.opt}</TableRowColumn>
+            </TableRow>
+        )) }
+    </TableBody>
+</Table>
