@@ -54,7 +54,7 @@ class StepperForm extends React.Component {
         return (
             <div style={{ margin: '12px 0' }}>
                 <RaisedButton
-                    label={ step === 2 ? "Finish" : "Next"}
+                    label={step === 2 ? "Finish" : "Next"}
                     disableTouchRipple={true}
                     disableFocusRipple={true}
                     primary={true}
